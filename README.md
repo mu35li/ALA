@@ -1,4 +1,0 @@
-Uni
-===
-
-Stuff for university
