@@ -77,11 +77,97 @@
 			$T_5(x)=x+x^2+\frac{2}{6}x^3+\frac{-4}{120}x^5$\\
 	\end{enumerate}
 
-
+% Aufgabe 2
 \item[\textbf{2.}]
+    \begin{enumerate}
+        \item[(i)]
+            \begin{align*}
+                &\underset{x \to 1}{\lim} \left( \frac{x^3-3x^2+x+2}{x^2-5x+6} \right) = \frac{1}{2}
+            \end{align*}
+        \item[(ii)]
+            \begin{align*}
+                &\underset{x \to 2}{\lim} \left( \frac{x^3-3x^2+x+2}{x^2-5x+6} \right)\\
+                \overset{*}{=}&\underset{x \to 2}{\lim} \left( \frac{3x^2-6x+1}{2x-5} \right)\\
+                =& -1
+            \end{align*}
+            * Anwendung der Regel von Los Hospitalos (aka l'Hospital)..
+        \item[(iii)]
+            \begin{align*}
+                &\underset{x \to 0}{\lim} (1+3x)^{\frac{1}{2x}}\\
+                =&\underset{x \to 0}{\lim} \left( e^{\frac{1}{2x} \cdot \ln(1+3x)} \right)\\
+                =&e^{\underset{x \to 0}{\lim} \left( \frac{1}{2x} \cdot \ln(1+3x) \right)}
+            \end{align*}
+            Berechnung des Exponenten:
+            \begin{align*}
+                &\underset{x \to 0}{\lim} \left( \frac{\ln(1+3x)}{2x} \right)\\
+                \overset{*}{=}&\underset{x \to 0}{\lim} \left( \frac{\frac{3}{3x+1}}{2} \right)\\
+                =& \frac{3}{2}\\
+            \end{align*}
+                Es folgt: $e^{\frac{3}{2}}$\\\\
+            * Hier wieder l'Hospital..
+        \item[(iv)]
+            \begin{align*}
+                &\underset{x \to 0}{\lim} \left( \frac{1}{e^x -1}-\frac{1}{\sin(x)} \right)\\
+                =&\underset{x \to 0}{\lim} \left( \frac{\sin(x) - e^x + 1}{e^x \sin(x) - \sin(x)} \right)\\
+                \overset{*}{=}&\underset{x \to 0}{\lim} \left( \frac{\cos(x) - e^x}{e^x \sin(x) +(e^x -1) \cos(x)} \right)\\
+                \overset{*}{=}&\underset{x \to 0}{\lim} \left( \frac{-e^x - \sin(x)}{\sin(x) +2e^x \cos(x)} \right)\\
+                =& -\frac{1}{2}
+            \end{align*}
+            * de l'Hospital again.
+    \end{enumerate}
 
-
+% Aufgabe 3
 \item[\textbf{3.}]
+    \begin{enumerate}
+        \item[a)]
+            Die Steigung von $t$ ist die Steigung von $f$ an der Stelle $(2,9)$.
+            \begin{align*}
+                f(x)=x^3-x^2+3x-1\\
+                f'(x)=3x^2-2x+3\\
+                f'(2)=11
+            \end{align*}
+            Die Steigung von $t$ ist 11. Daraus ergibt sich $t(2)=9$, oder ebenso $t(3)=20$. Also:
+            \begin{align*}
+                t(x)=ax+b\\
+                9=2a+b\\
+                20=3a+b\\
+                b=9-2a\\
+                20=3a+9-2a\\
+                20=a+9\\
+                a=11\\
+                b=-13\\
+                t(x)=11x-13\\
+                t(x)=0\\
+                \Leftrightarrow x=\frac{13}{11}
+            \end{align*}
+            $t$ hat den Schnittpunkt mit der $x$-Achse an der Stelle $\frac{13}{11}$
+        \item[c)]
+            Zuerst berechnet man die ersten drei Ableitungen von $\sqrt[5]{x+1}$ und die Funktionswerte für $x = 0$,
+            danach wird dies in die Taylorpolynomformel eingesetzt.
+            \begin{align*}
+            &f(x) = \sqrt[5]{x+1} && f(0) = 1 \\
+            &f'(x) = \frac{1}{5}(x+1)^{-\frac{4}{5}} && f'(0) = \frac{1}{5} \\
+            &f''(x) = -\frac{4}{25}(x+1)^{-\frac{9}{5}} && f''(0) = -\frac{4}{25} \\
+            &f'''(x) = \frac{36}{125}(x+1)^{-\frac{14}{5}} && f'''(0) = \frac{36}{125} \\
+            \end{align*}
+            Einsetzen in $$\sum_{k=0}^{n} \frac{f^{(k)}(0)}{k!}x^k:$$ 
+            \begin{align*}
+            &T_0(x) = 1 \\
+            &T_1(x) = 1 + \frac{1}{5}x \\
+            &T_2(x) = 1 + \frac{1}{5}x -\frac{2}{25}x^2 \\
+            &T_3(x) = 1 + \frac{1}{5}x -\frac{2}{25}x^2 + \frac{6}{125}x^3 \\
+            \end{align*}
+        \item[d)]
+            Die Funktion $h$ ist genau dann differenzierbar, wenn der Grenzwert des Differenzenquotienten existiert (mit $x_0=0$):
+            \begin{align*}
+                &\underset{x \to 0}{\lim} \frac{h(x)-h(0)}{x}\\
+                =\ &\underset{x \to 0}{\lim} \frac{x \cdot \cos(\frac{1}{x})}{x}\\
+                \overset{*}{=}\ &\underset{x \to 0}{\lim} \frac{\sin(\frac{1}{x})}{x} + \cos{\frac{1}{x}}
+            \end{align*}
+            *de l'Hospital\\
+            Die Funktion an der Stelle 0 nicht differenzierbar, da der Grenzwert zwischen $-\infty$ und $\infty$ schwankt.
+    \end{enumerate}
+
     
 
 \item[\textbf{4.}]
