@@ -1,5 +1,5 @@
 \newcommand{\authorinfo}{Julian Deinert, Frederik Wille, Carolin Konietzny}
-\newcommand{\titleinfo}{ALA 07 (HA) zum 05.06.2014}
+\newcommand{\titleinfo}{ALA 09 (HA) zum 26.06.2014}
 
 % PREAMBLE ===============================================================
 
@@ -38,10 +38,40 @@
 \begin{enumerate}
     
 \item[\textbf{1.}]
-
+	\begin{itemize}
+	\item[(i)]
+		\begin{align*}
+			f(x,y)&=2x^2y^2-3xy+4x+2\\
+			\frac{\delta f}{\delta x}(x,y)&=4xy^2-3y+4\\
+			\frac{\delta f}{\delta y}(x,y)&=4x^2y-3x\\
+			&=4x^2y+x\\
+		\end{align*}
+	\item[(ii)]
+		\begin{align*}
+			f(x,y)&=\cos(x^2y)*e^{xy}\\
+			\frac{\delta f}{\delta x}(x,y)&=-sin(x^2y)*e^{xy}*2xy+\cos(x^2y)*e^{xy}\\
+			\frac{\delta f}{\delta y}(x,y)&=-sin(x^2y)*e^{xy}*x^2+\cos(x^2y)*e^{xy}\\
+		\end{align*}
+	\item[(iii)]
+		\begin{align*}
+			f(x,y)&=\frac{\sin(x)+\cos(y)}{x^2+y^2}\\
+			\frac{\delta f}{\delta x}(x,y)&=\frac{ \left( \cos \left( x \right)+cos\left(y\right)\right)*\left(x^2+y^2\right)-\left(\sin(x)+\cos(y)\right)*2x }{\left(x^2+y^2\right)^2}\\
+			\frac{\delta f}{\delta y}(x,y)&=\frac{\left(\sin (x)-\sin (y)\right)*\left(x^2+y^2\right)-\left(\sin(x)+\cos(y)\right)*2y}{\left(x^2+y^2\right)^2}
+		\end{align*}
+	\item[(iv)]
+		\begin{align*}
+			f(x,y)&=\sqrt{1-x^2-y^2}\\
+			&=\left(1-x^2-y^2\right)^\frac{1}{2}\\
+			\frac{\delta f}{\delta x}(x,y)&=\frac{1}{2}*\left(1-x^2-y^2\right)^{-\frac{1}{2}}*2x\\
+			\frac{\delta f}{\delta x}(x,y)&=\frac{1}{2}*\left(1-x^2-y^2\right)^{-\frac{1}{2}}*2y
+		\end{align*}
+	\end{itemize}
 
 \item[\textbf{2.}]
-
+	\begin{align*}
+		f(x,y)&=x^2y^3+ye^{x^2y}\\
+		\frac{\delta f}{\delta x}(x,y)&=
+	\end{align*}
 
 \item[\textbf{3.}]
     
