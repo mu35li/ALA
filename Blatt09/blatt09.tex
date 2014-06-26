@@ -63,14 +63,21 @@
 			f(x,y)&=\sqrt{1-x^2-y^2}\\
 			&=\left(1-x^2-y^2\right)^\frac{1}{2}\\
 			\frac{\delta f}{\delta x}(x,y)&=\frac{1}{2}*\left(1-x^2-y^2\right)^{-\frac{1}{2}}*2x\\
-			\frac{\delta f}{\delta x}(x,y)&=\frac{1}{2}*\left(1-x^2-y^2\right)^{-\frac{1}{2}}*2y
+			\frac{\delta f}{\delta y}(x,y)&=\frac{1}{2}*\left(1-x^2-y^2\right)^{-\frac{1}{2}}*2y
 		\end{align*}
 	\end{itemize}
 
 \item[\textbf{2.}]
 	\begin{align*}
 		f(x,y)&=x^2y^3+ye^{x^2y}\\
-		\frac{\delta f}{\delta x}(x,y)&=
+		\frac{\delta f}{\delta x}(x,y)&=2xy^3+y^2*e^{x^2y}*2x\\
+		\frac{\delta f}{\delta y}(x,y)&=3x^2y^2+x^2ye^{x^2y}\\
+		\frac{\delta^2 f}{\delta x^2}(x,y)&=2y^3+y^2*e^{x^2y}*4x^2\\
+		\frac{\delta^2 f}{\delta y^2}(x,y)&=6x^2y+x^2y^2e^{x^2y}\\
+		\frac{\delta^2 f}{\delta x \delta y}(x,y)&=\left( \frac{\delta f}{\delta x}(x,y) \right)'=6xy^2+2x*\left( 2y*e^{x^2y} + ye^{x^2y}*x^2 \right)\\
+		&=6xy^2+4xye^{x^2y}+2x^3e^{x^2y}\\
+		\frac{\delta^2 f}{\delta y \delta x}(x,y)&=\left( \frac{\delta f}{\delta y}(x,y) \right)'=6xy^2+y*\left( 4xe^{x^2y}+2x^3ye^{x^2y} \right)\\
+		&=6xy^2+4xye^{x^2y}+2x^3e^{x^2y}
 	\end{align*}
 
 \item[\textbf{3.}]
