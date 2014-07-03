@@ -1,5 +1,5 @@
 \newcommand{\authorinfo}{Julian Deinert, Frederik Wille, Carolin Konietzny}
-\newcommand{\titleinfo}{ALA 07 (HA) zum 05.06.2014}
+\newcommand{\titleinfo}{ALA 07 (HA) zum 3.7.2014}
 
 % PREAMBLE ===============================================================
 
@@ -44,9 +44,44 @@
 
 
 \item[\textbf{3.}]
-    
+    \begin{align*}
+    	f(x,y)&=-0,2x^2-0,2xy-0,1y^2+48x+47y-500 \\
+    	x+y&=200 \\
+    	0&=x+y-200
+    \end{align*}
+    \begin{itemize}
+    	\item[a)]
+			$L(x,y,\lambda )=-0,2x^2-0,2xy-0,1y^2+48x+47y-500+ \lambda *\left( x+y-200 \right) $\\
+			\begin{align*}
+				\frac{\delta L}{\delta x}(x,y,\lambda)=-0,4x-0,2y+48+\lambda&=0\\
+				\frac{\delta L}{\delta x}(x,y,\lambda)=-0,2x-0,2y+47+\lambda&=0\\
+				x+y-200&=0
+			\end{align*}
+			\begin{align*}
+				-0,2x+1&=0\\
+				x&=5\\
+				y&=200-x=195
+			\end{align*}
+			kritische Stelle bei (5,195)
+		\item[b)]
+			$\bar{H}=\left(\begin{matrix}
+				0 & 1 & 1 \\
+				1 & -0,4 & -0,2 \\
+				1 & -0,2 & -0,2 
+			\end{matrix}\right)$\\
+			$|\bar{H}|=\frac{1}{5} \Rightarrow lokales Maximum $
+    \end{itemize}
 
 \item[\textbf{4.}]
-
+	\begin{align*}
+		f(x,y)&=-0,2x^2-0,2xy-0,1y^2+48x+47y-500 \\
+		f(x)&=-0,2x^2-0,2x\left(200-x\right)-0,1\left(200-x\right)^2+48x+47\left(200-x\right)-500 \\
+		&=-0,1x^2+x+4900 \\
+		f'(x)&=-0,2x+1 \\
+		0&=-0,2x+1\\
+		1&=0,2x\\
+		x&=5\\
+		y&=200-x=195\\
+	\end{align*}
 \end{enumerate}
 \end{document}
