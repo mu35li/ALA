@@ -1,0 +1,95 @@
+\newcommand{\authorinfo}{Julian Deinert, Frederik Wille, Carolin Konietzny}
+\newcommand{\titleinfo}{ALA 10 (HA) zum 03.07.2014}
+
+% PREAMBLE ===============================================================
+
+\documentclass[a4paper,11pt,fleqn]{scrartcl}
+\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage{multicol}
+\usetikzlibrary{calc}
+\usetikzlibrary{patterns}
+
+\author{\authorinfo}
+\title{\titleinfo}
+\date{\today}
+
+\newcommand{\bra}[1]{\left(#1\right)}
+\newcommand{\limnn}[2]{\lim\limits_{n \rightarrow #1}\bra{#2}}
+\newcommand{\limn}[1]{\lim\limits_{n \rightarrow \infty}\bra{#1}}
+\newcommand{\limx}[1]{\lim\limits_{x \rightarrow \infty}\bra{#1}}
+\newcommand{\limz}[1]{\lim\limits_{z \rightarrow \infty}\bra{#1}}
+\newcommand{\rowi}[1]{\sum_{i=#1}^{\infty}}
+\newcommand{\row}{\rowi{0}}
+\newcommand{\step}[1]{\textbf{#1}}
+\newcommand{\dX}[1]{\, \mathrm{d}#1}
+\newcommand{\dx}[0]{\dX{x}}
+\newcommand{\dt}[0]{\dX{t}}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    
+\item[\textbf{1.}]
+    \begin{enumerate}
+        \item[a)]
+            \begin{align*}
+                f_x &= 4x -2\\
+                f_y &= 2y -2z -6\\
+                f_z &= 8z -2y\\
+            \end{align*}
+            \begin{align*}
+                f_{xx} &= 4  & f_{xy}  &= 0 & f_{xz} &= 0\\
+                f_{yx} &= 0  & f_{yy}  &= 2 & f_{yz} &= -2\\
+                f_{zx} &= 0  & f_{zy}  &= -2 & f_{zz} &= 8\\
+            \end{align*}
+                grad(0,0,0)
+            \begin{align*}
+                4x -2 &= 0   \\
+                2y -2z-6 &= 0\\
+                8z - 2y &= 0 \\
+            \end{align*}
+            Das Gleichungssystem hat die L"osung $S(\frac{1}{2}, 4, 1)$.
+
+            \[ H = \begin{pmatrix} 4 & 0 & 0\\ 0 & 2 & -2\\ 0 & -2 & 8 \end{pmatrix}\]
+            \begin{align*}
+                \delta_1 &= 4 \\
+                \delta_2 &= 8\\
+                \delta_3 &= 34\\
+            \end{align*}
+
+            Die Matrix ist positiv definit, also ist an der Stelle $S(\frac{1}{2}, 4, 1)$ ein lokales Minimum. 
+        
+        \item[b)]
+            \[\text{gradT}(x,y,z) = (4x -2 , 2y -2z -6, 8z -2y)\]
+
+            An $P(1,1,1)$ gilt:
+
+            \[\text{gradT}(1,1,1) = (2, -6, 6)\]
+
+            Die Temperatur steigt in die Richtung des Vektors \( (2, -6, 6) \) am schnellsten an.
+            Die Gr"osse des Anstiegs betr"agt 
+
+            \[\left|\sqrt{2^2 + (-6)^2 + 6^2}\right| = 8,717797887\]
+
+            Die Richtung des steilsten Abstiegs ist 
+
+            \[-gradT(x,y,z) = (-(4x-2), -(2y-2z-6), -(8z-2y)) = (-2,6,-6)\]
+
+    \end{enumerate}
+
+\item[\textbf{2.}]
+    
+\item[\textbf{3.}]
+    
+\item[\textbf{4.}]
+    
+\end{enumerate}
+\end{document}
