@@ -1,74 +1,155 @@
-\newcommand{\authorinfo}{Julian Deinert, Frederik Wille, Carolin Konietzny}
-\newcommand{\titleinfo}{ALA 07 (HA) zum 05.06.2014}
+\newcommand{\authorinfotitle}{Carolin Konietzny\\ Frederik Wille\\Julian Deinert}
+\newcommand{\authorinfo}{Carolin Konietzny, Frederik Wille, Julian Deinert}
 
-% PREAMBLE ===============================================================
+\newcommand{\qed}{\square}
+\newcommand{\limp}{\underset{n \to \infty}{\lim}}
+\newcommand{\limn}{\underset{n \to - \infty}{\lim}}
+\newcommand{\todo}{\textbf{\textcolor{red}{TODO}}}
+\newcommand{\todaynum}{\the\day.\the\month.\the\year}
+\newcommand{\abgabe}{\textbf{\textcolor{red}{ABGABEDATUM}}}
+\newcommand{\titleinfo}{ALA BLATTNR. 11 10.07.2014}
 
-\documentclass[a4paper,11pt,fleqn]{scrartcl}
+\documentclass[a4paper,11pt]{article}
+\usepackage[a4paper]{geometry}
 \usepackage[german,ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{amssymb}
-\usepackage{amsmath}
+\usepackage{amsmath,amssymb,amstext}
+\usepackage{mathtools}
 \usepackage{enumerate}
+\usepackage{breqn}
 \usepackage{fancyhdr}
-\usepackage{pgfplots}
 \usepackage{multicol}
+\usepackage{color}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{scrdate}
+\usepackage[makeroom]{cancel}
 \usetikzlibrary{calc}
-\usetikzlibrary{patterns}
 
-\author{\authorinfo}
 \title{\titleinfo}
+\author{\authorinfotitle}
 \date{\today}
 
-\newcommand{\bra}[1]{\left(#1\right)}
-\newcommand{\limnn}[2]{\lim\limits_{n \rightarrow #1}\bra{#2}}
-\newcommand{\limn}[1]{\lim\limits_{n \rightarrow \infty}\bra{#1}}
-\newcommand{\limx}[1]{\lim\limits_{x \rightarrow \infty}\bra{#1}}
-\newcommand{\limz}[1]{\lim\limits_{z \rightarrow \infty}\bra{#1}}
-\newcommand{\rowi}[1]{\sum_{i=#1}^{\infty}}
-\newcommand{\row}{\rowi{0}}
-\newcommand{\step}[1]{\textbf{#1}}
-\newcommand{\dX}[1]{\, \mathrm{d}#1}
-\newcommand{\dx}[0]{\dX{x}}
-\newcommand{\dt}[0]{\dX{t}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\authorinfo}
+\fancyhead[L]{ALA Hausaufgaben}
+\fancyfoot[C]{\thepage}
+
 
 \begin{document}
 \maketitle
-\begin{enumerate}
-    
-\item[\textbf{1.}]
+    \begin{enumerate}
 
+            \item[\textbf{1.}]
+                $I = \{ (x,y): 1 \leq x \leq 2; -1 \leq y \leq 3 \}$\\
+                Erste Art:
+                \begin{align}
+                    & \int \int_G f(x,y) \mathrm{d}(x,y)\\
+                    = & \int_1^2 \left( \int_{-1}^3 2x^2y \mathrm{d}y\right)\mathrm{d}x\\
+                    = & \int_1^2 \left( [x^2y^2]_{-1}^3 \right)\mathrm{d}x\\
+                    = & \int_1^2 8x^2\mathrm{d}x\\
+                    = & [\frac{8}{3}x^3]_1^2\\
+                    = & \frac{56}{3}
+                \end{align}
+                Zweite Art:
+                \begin{align}
+                    & \int \int_G f(x,y) \mathrm{d}(x,y)\\
+                    = & \int_{-1}^3 \left( \int_1^2 2x^2y \mathrm{d}x \right) \mathrm{d}y\\
+                    = & \int_{-1}^3 \left( [ \frac{2}{3}x^3 y ]_1^2 \right) \mathrm{d}y\\
+                    = & \int_{-1}^3 \frac{14}{3}y \mathrm{d}y\\
+                    = & [ \frac{7}{3}y^2 ]_{-1}^{3}\\
+                    = & \frac{56}{3}
+                \end{align}
+            \item[\textbf{2.}]
+                \begin{enumerate}
+                    \item[(i)]
+                        Die Gleichung der Geraden durch die Punkte (0,0) und (1,3) lautet $y=3x$.
+                        Für $\phi_1(x) = 0$ und $\phi_2(x)=3x$ können wir Satz 6.5 aus dem Skript anwenden und erhalten:
+                        \begin{align*}
+                            & \int \int (xy^2) \mathrm{d}(x,y)\\
+                            = & \int_0^1 \left( \int_0^{3x} xy^2 \mathrm{d}y \right) \mathrm{d}x\\
+                            = & \int_0^1 \left( [\frac{1}{3}xy^3]_0^{3x} \right) \mathrm{d}x\\
+                            = & \int_0^1 9x^4 \mathrm{d}x\\
+                            = & \frac{9}{5}
+                        \end{align*}
+                    \item[(ii)]
+                        Das gegebene Dreieck hat den gleichen Flächeninhalt wie das in (i). Dementsprechend ist das Ergebnis das gleiche.
 
-\item[\textbf{2.}]
+                \end{enumerate}
 
+            \item[\textbf{3.}]
+                \begin{enumerate}
+                    \item[a)]
+                        \begin{itemize}
+                            \item $f_3(n)$\\
+                            \item $f_2(n)$\\
+                            \item $f_6(n)$\\
+                            \item $f_1(n)$\\
+                            \item $f_4(n)$\\
+                            \item $f_5(n)$\\
+                        \end{itemize}
+                        $f_3$ wächst am langsamsten, da es sich hier um lineares
+                        Wachstum handelt. Danach kommt $f_2$, was ein Polynom ist.
+                        Diese wächt allerdings langsamer als die anderen Polynome,
+                        da es sich um den Sonderfall der Wurzelfunktion handelt.
+                        Als nächstes könnte man denken käme $f_1$, da $f_6$ ja
+                        schneller wachsen sollte, weil es ein Polynom multipliziert
+                        mit einem Logarithmus ist. Diese Annahme ist falsch,
+                        da bei der Landaunotation stets nur auf die mächtigste
+                        Komponente geachtet wird, was in dem Fall $n^2$ wäre, und
+                        dies wächst langsamer als $n^{2.5}$. Zuletzt kommen
+                        die beiden Exponentialfunktionen $f_4$ und $f_5$.
+                        Eigentlich teilen diese beiden sich den Platz für das
+                        schnellste Wachstum, da die Basis von $10$ bzw. $100$
+                        in der Landaunotation keinen Unterschied macht.
+                    \item[b)]
+                        \begin{itemize}
+                            \item $g_3(n)$\\
+                            \item $g_1(n)$\\
+                            \item $g_4(n)$\\
+                            \item $g_5(n)$\\
+                            \item $g_2(n)$\\
+                            \item $g_7(n)$\\
+                            \item $g_6(n)$\\
+                        \end{itemize}
+                        Die Liste beginnt mit $g_3$, da hier die mächtigste Komponente
+                        nur ein $n$ ist. Danach $g_1$, und zwar vor $g_4$, da:
+                        \[ g_1(n)=e^{\ln(2) \cdot \sqrt{\log_2(n)}}=O(e^{\ln(n) \cdot \frac{4}{3}}) \]
+                        Als nächstes kommt $g_5$, was überraschend scheinen kann, da es sowohl
+                        in der Basis als auch im Exponenten ein $n$ hat. Jedoch
+                        wächst der Exponent nur logarithmisch, also langsamer
+                        als die Exponenten der übrigen Funktionen. Deshalb 
+                        wird $g_5$ unter den restlichen Funktionen eingeordnet,
+                        da die Basis nicht ausschlaggebend genug ist.
+                        Es folgen die Funktionen mit Basis 2, die nach 
+                        ihren Exponenten geordnet sind. Die Begründung für diese
+                        Ordnung ist trivial und z.T. bereits in a) geschehen.
+                \end{enumerate}
 
-\item[\textbf{3.}]
-    
+            \item[\textbf{4.}]
+                \begin{enumerate}
+                    \item[a)]
+                        (i): falsch, da ein Polynom nicht genauso schnell wächst
+                        wie eine Exponentialfunktion.\\
+                        (ii): richtig, da $3^n$ mindestens so schnell wächst wie
+                        $2^n$. Der Beweis ist trivial.\\
+                        (iii): richtig, da der Unterschied in der Basis für 
+                        besonders hohe Werte keinen Unterschied macht.\\
+                        (iv): richtig, denn wegen des Exponenten $\sqrt{n}$
+                        wächst die Funktion auf der linken Seite langsamer.\\
+                        (v): falsch, $\ln(n)$ wächst wesentlich schneller als
+                        $\ln(\sqrt{n})$.\\
+                        (vi): falsch, der Logarithmus wächst wesentlich
+                        schneller als die Wurzel eines Logarithmus.
+                    \item[b)]
+                        $f(n)=n$, $g(n)=n^{1+\sin(n)}$
+                \end{enumerate}
 
-\item[\textbf{4.}]
-	\begin{itemize}
-		\item[a)]
-			\begin{itemize}
-				\item[i)]
-					falsch, da laut Skript Polynome nicht so schnell wachsen wie Exponentialfunktionen
-				\item[ii)]
-					richtig, da bei Exponentialfunktionen mit gleichem Exponenten, die mit höherer Basis mindestens so schnell wächst wie die Funktion mit niedrigerer Basis
-				\item[iii)]
-					richtig, da bei Exponentialfunktionen die Basis für sehr hohe Exponenten kaum einen Unterschied machen
-				\item[iv)]
-					richtig, denn der Exponent $\sqrt{n}$ ist bedeutend kleiner als n
-				\item[v)]
-					falsch, durch die Wurzel wächst $\log _2 \left(\sqrt{n}\right)$ deutlich langsamer 
-				\item[vi)]
-					falsch, da ebenfalls durch die Wurzel die rechte Funktion langsamer wächst
-				
-			\end{itemize}
-		\item[b)]
-			$f(x)=n$ \\
-			$g(x)=sin\left(x\right) $
-%			Da g(x) nicht "asymptotisch nicht-negativ" ist
-	\end{itemize}
+    \end{enumerate}
 
-\end{enumerate}
 \end{document}
